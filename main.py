@@ -14,6 +14,7 @@ pixels = img.load()
 
 for i in range(img.size[0]):
     for j in range(img.size[1]):
-        pixels[i,j] = (im[i][j], im[j][i], int(math.sin(i*j)*j))
+        pixels[i,j] = (im[i][j]*100, im[j][i]*int((math.sin(i*j))*10000*(i*math.cos(i*j)/(j+1))), int((math.sin(i*j))*10000*(i*math.cos(i*j)/(j+1))))
 
 img.show()
+img.save("img.png", "PNG")
